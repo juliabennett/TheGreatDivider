@@ -1,0 +1,127 @@
+body {
+	color: #363636;
+	text-shadow: none;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+h1 {
+	font-size: 6em;
+}
+
+.btn-default{
+	background-color: #E8E8E8;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hidden {
+	display: none;
+}
+
+#lefty div {
+	color: #0000CF;
+	line-height: 0.8;
+	text-align: right;
+	padding-right: 16px;
+}
+
+#righty div{
+	color: #D00000;
+	line-height: 0.8;
+	text-align: left;
+	padding-left: 16px;
+}
+
+.cover-container{
+	width: 95%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+img {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-radius: 25px;
+}
+
+.footer{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 5em;
+	background-color: rgba(0, 0, 0, .07);
+	font-size: 1.25em;
+	color: rgba(0, 0, 0, .4);
+}
+
+.footer span {
+	padding: 0 1em;
+}
+
+a, 
+a:active, 
+a:visited {
+	color: rgba(0, 0, 0, .5);
+}
+
+.cloud{
+	padding-bottom: 2em;
+}
+
+div.cloud:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .3;
+}
+
+blockquote {
+	color: #363636;
+	text-shadow: none;
+	font-size: .9em;
+}
+
+#keyword-form {
+	margin-bottom: 4em;
+}
+
+#links div {
+	text-align: left;
+	font-size: 1.2em;
+}
+
+.read-more {
+	margin-top: 1em;
+}
+
+.clouds, #again, #loading {
+	padding-top:2em;
+}
+
+@-webkit-keyframes blink { 50% { opacity: 0; }}
+@-moz-keyframes blink { 50% { opacity: 0; }}
+@-ms-keyframes blink { 50% { opacity: 0; }}
+@keyframes blink { 50% { opacity: 0; }}
+
+#loading {
+  -webkit-animation: blink 800ms infinite;
+  -moz-animation: blink 800ms infinite;
+  -ms-animation: blink 800ms infinite;
+  animation: blink 800ms infinite;
+
+  -webkit-transition: opacity 400ms linear;
+  transition: opacity 250ms fade-out;
+}
+
+
+	
+
+
