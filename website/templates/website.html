@@ -3,132 +3,132 @@
 
 <head>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>The Great Divider</title>
-	<meta name='author' content='Julia Bennett'>
-  	<meta name='description' content='Sifting our conversations about politics.'>
+  <title>The Great Divider</title>
+  <meta name='author' content='Julia Bennett'>
+    <meta name='description' content='Sifting our conversations about politics.'>
 
-	<link href="{{ url_for('static', filename='cover.css') }}" rel="stylesheet">
-	<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='cover.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-	<div class="site-wrapper">
-	  <div class="site-wrapper-inner">
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
 
-	  	<div class="cover-container">
-	  		<br>
+      <div class="cover-container">
+        <br>
         <h1 class="cover-heading">The Great Divider</h1>
         <h3>Sifting our conversations about politics.</h3> 
 
         <img width="80%" height="auto" src="{{ url_for('static', filename='meeting.jpg') }}">
-      	<br> 
+        <br> 
 
-      	<div class="inner cover">
-      		<div class='toggle'>
-	    		<form>
-		      	<h4>Choose from selected political topics:</h4>
-		      	<div class="row">
-		      		<div class="col-xs-2"></div>
-			   			<div class="col-xs-8">
-				      	<select  id='dropdown' class="form-control">
-				      		<option value="" disabled selected> choose a political topic</option>
-				      		<option value='bernie'> bernie </option>
-				      		<option value='crime'> crime </option>
-				      		<option value='gun control'>gun control</option>
-								  <option value='healthcare'>healthcare</option>
-								  <option value='immigration'> immigration </option>
-								  <option value='iowa'>iowa</option>
-								  <option value='iran'>iran</option>
-								  <option value='minimum wage'>minimum wage</option>
-								  <option value='parenthood'>parenthood</option>
-								  <option value='school'>school</option>
-								  <option value='security'>security</option>
-								  <option value='taxes'>taxes</option>
-								  <option value='trump'>trump</option>
-								  <option value='terrorism'>terrorism</option>
-								  <option value='violence'>violence</option>
-								   <option value='women'>women</option>
-								</select>
-								</form>
-			   		  </div>
-			    		<div class="col-xs-2"></div>
-		    		</div>
-	    		</form>
+        <div class="inner cover">
+          <div class='toggle'>
+          <form>
+            <h4>Choose from selected political topics:</h4>
+            <div class="row">
+              <div class="col-xs-2"></div>
+               <div class="col-xs-8">
+                <select  id='dropdown' class="form-control">
+                  <option value="" disabled selected> choose a political topic</option>
+                  <option value='bernie'> bernie </option>
+                  <option value='crime'> crime </option>
+                  <option value='gun control'>gun control</option>
+                  <option value='healthcare'>healthcare</option>
+                  <option value='immigration'> immigration </option>
+                  <option value='iowa'>iowa</option>
+                  <option value='iran'>iran</option>
+                  <option value='minimum wage'>minimum wage</option>
+                  <option value='parenthood'>parenthood</option>
+                  <option value='school'>school</option>
+                  <option value='security'>security</option>
+                  <option value='taxes'>taxes</option>
+                  <option value='trump'>trump</option>
+                  <option value='terrorism'>terrorism</option>
+                  <option value='violence'>violence</option>
+                   <option value='women'>women</option>
+                </select>
+                </form>
+               </div>
+              <div class="col-xs-2"></div>
+            </div>
+          </form>
 
-	    		<div> <h3> OR </h3><div>
+          <div> <h3> OR </h3><div>
 
-        	<form id='enter'>
-		      	<h4> Feeling lucky?</h4>
-		      	<div class="row">
-		      		<div class="col-xs-2"></div>
-			   			<div class="col-xs-8">
-			   					<div class="input-group">
-							      <input type="text" class="form-control" placeholder="enter any political topic">
-							      <span class="input-group-btn">
-							        <button class="btn btn-default" type="submit">search</button>
-							      </span>
-							    </div>
-			   		  </div>
-			    		<div class="col-xs-2"></div>
-		    		</div>
-	    		</form>
-	    		</div>
-	    	</div>
-	  	</div>
+          <form id='enter'>
+            <h4> Feeling lucky?</h4>
+            <div class="row">
+              <div class="col-xs-2"></div>
+               <div class="col-xs-8">
+                   <div class="input-group">
+                    <input type="text" class="form-control" placeholder="enter any political topic">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">search</button>
+                    </span>
+                  </div>
+               </div>
+              <div class="col-xs-2"></div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
 
-	  	<div>
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				    	<div class="modal-header">
-				    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				    		<div class='modal-title'> <h3> Want to read more? </h3> </div> 
-        			</div>
-            	<div class="modal-body" id='links'></div>
-						</div>
-				  </div>
-				</div>
-	  	</div>
+      <div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class='modal-title'> <h3> Want to read more? </h3> </div> 
+              </div>
+              <div class="modal-body" id='links'></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	  	<div class='content toggle hidden'>
-	  		<h3 id='loading' class='toggle hidden'>loading...</h3>
-	  		<div class='row clouds'>
-	  			<div id='lefty' class="col-xs-6">  </div>
-	  			<div id='righty' class="col-xs-6"> </div> 
-	  		</div>
-	  		<div id='safe'></div>
-	  		<div class = 'row'> 
-	  			<div id='again' class='toggle col-xs-12'>
-	  					 <a href='/'><button class="btn btn-default form-control">try again</button></a>
-	  			</div>
-	  		</div>
-	  	</div>
-	    
+      <div class='content toggle hidden'>
+        <h3 id='loading' class='toggle hidden'>loading...</h3>
+        <div class='row clouds'>
+          <div id='lefty' class="col-xs-6">  </div>
+          <div id='righty' class="col-xs-6"> </div> 
+        </div>
+        <div id='safe'></div>
+        <div class = 'row'> 
+          <div id='again' class='toggle col-xs-12'>
+               <a href='/'><button class="btn btn-default form-control">try again</button></a>
+          </div>
+        </div>
+      </div>
+      
 
-	  </div>
-	</div>
+    </div>
+  </div>
 
-	<div class='footer'>
-		<div> 
-			<span>Julia Bennett</span> 
-			<span>|</span> 
-			<span><a href='http://juliaben.net/t/'>juliaben.net/t</a></span> 
-			<span>|</span> 
-			<span><a href='https://github.com/juliabennett'> github.com/juliabennett </a></span> 
-		</div>
-	</div>
+  <div class='footer'>
+    <div> 
+      <span>Julia Bennett</span> 
+      <span>|</span> 
+      <span><a href='http://juliaben.net/t/'>juliaben.net/t</a></span> 
+      <span>|</span> 
+      <span><a href='https://github.com/juliabennett'> github.com/juliabennett </a></span> 
+    </div>
+  </div>
 
-	<script src="{{ url_for('static', filename='draw.js') }}"></script>
+  <script src="{{ url_for('static', filename='draw.js') }}"></script>
 
 </body>
 </html>
