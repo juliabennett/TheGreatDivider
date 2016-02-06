@@ -13,8 +13,8 @@ $(document).ready(function(){
       var val = $(this).val();
     }
     
-    $('<h2></h2>')
-      .html("Conversations about '" + val + "'?")
+    $('<h2 id="question"></h2>')
+      .html('Conversations about &ldquo;' + val + '"?')
       .prependTo(".content");
 
     $('#lefty').empty();
@@ -23,20 +23,22 @@ $(document).ready(function(){
     $('.toggle').toggleClass('hidden');
 
     $.getJSON('/search?keyword='  + val, respond);
-
     return false;
   }
 
   function respond(res) {
       $('#loading').addClass('hidden');
+      $('#titles').removeClass('hidden');
       $('#again').removeClass('hidden');
 
-      var text = ["<div>Sorry, not enough discussion about this topic.</div>", 
-            "<div>Please try again!</div>"].join(" ");
+      var text = {
+        'few': "<div class='sorry'>Sorry, not enough discussion about this topic.</div>", 
+        'bad': "<div class='sorry'>Sorry, failed to extract topics. </div>"
+      }
 
-      if (! res['left'] || ! res['right']) {
+      if (res['success'] !== true) {
         $('.clouds').remove();
-        $('<h3>' + text + '</h3>')
+        $('<h3>' + text[res['success']] + '</h3>')
           .appendTo($('#safe'));
         return false;
       } 
@@ -52,26 +54,16 @@ $(document).ready(function(){
       $(".cloud").click(function(){ return showModal($(this), res);} )
     }  
 
-  function draw(data, side, ind) {
-    var words = data['words'],
-        cloud = $("<div class='cloud'></div>"),
-        classes = {
-          0: "zero", 
-          1: 'one', 
-          2: "two", 
-          3: 'three', 
-          4: 'four', 
-        };
+  function draw(words, side, ind) {
+    var cloud = $("<div class='cloud'></div>");
 
     cloud
-      .addClass(classes[ind])
+      .addClass(ind.toString())
       .appendTo(side);
 
     for (var i=0; i<words.length; i++) {
       $('<div></div>')
-        .html(words[i].text)
-        .css('font-size', words[i].size)
-        .css('opacity', data['score'])
+        .html(words[i])
         .appendTo(cloud);  
     }
   }
@@ -81,14 +73,7 @@ $(document).ready(function(){
     $('#links').empty();
     
     var num = current.attr('class').split(/\s+/)[1], 
-        side = current.parent().attr("id"), 
-        classes = {
-          "zero": 0, 
-          'one': 1, 
-          "two": 2, 
-          'three': 3, 
-          'four': 4
-        };
+        side = current.parent().attr("id");
 
     if (side == "lefty") {
       var urls = res['left_urls'];
@@ -96,8 +81,8 @@ $(document).ready(function(){
     if (side == "righty") {
       var urls = res['right_urls'];
     }
-
-    var url_list = urls[classes[num]];
+    
+    var url_list = urls[Number.parseInt(num)];
 
     for (var i=0; i<url_list.length; i++) {
 
@@ -119,7 +104,7 @@ $(document).ready(function(){
 
       $("<a></a>")
         .attr("href", link)
-        .html('<button class="btn btn-default read-more" type="submit">read more</button>')
+        .html('<button class="btn btn-default read-more" type="submit">join the conversation</button>')
         .appendTo(block);
 
       $('<br>').appendTo($('#links'));

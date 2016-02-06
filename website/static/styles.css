@@ -1,44 +1,58 @@
 body {
 	color: #363636;
 	text-shadow: none;
+	font-family: "News Cycle", "Times New Roman", Times, serif;
 }
 
-h4 {
-	font-size: 1.5em;
+.flex {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+.flex-content { flex: 1; }
+
+h1 { font-size: 6em;}
+
+h2 { font-size: 3em; }
 
 h3 {
 	font-size: 2em;
+	font-style: italic;
 }
 
-h2 {
-	font-size: 3em;
-}
-
-h1 {
-	font-size: 6em;
-}
+h4 { font-size: 1.5em; }
 
 .btn-default{
-	background-color: #E8E8E8;
+	background-color: rgba(0, 0, 0, .07);
 	border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.btn:hover {
+	background-color:rgba(0, 0, 0, 0.0666667);
+	opacity: .5;
 }
 
 .hidden {
 	display: none;
 }
 
+#question{
+	border-bottom: 1px solid #353535;
+	padding-bottom: 5px;
+}
+
 #lefty div {
 	color: #0000CF;
 	line-height: 0.8;
-	text-align: right;
+	text-align: center;
 	padding-right: 16px;
 }
 
 #righty div{
 	color: #D00000;
 	line-height: 0.8;
-	text-align: left;
+	text-align: center;
 	padding-left: 16px;
 }
 
@@ -55,9 +69,10 @@ img {
 }
 
 .footer{
-	padding-top: 1em;
-	padding-bottom: 1em;
 	margin-top: 5em;
+    width: 100%;
+    padding-top: 1em;
+	padding-bottom: 1em;
 	background-color: rgba(0, 0, 0, .07);
 	font-size: 1.25em;
 	color: rgba(0, 0, 0, .4);
@@ -65,22 +80,38 @@ img {
 
 .footer span {
 	padding: 0 1em;
+	font-weight: bold;
 }
 
 a, 
 a:active, 
 a:visited {
 	color: rgba(0, 0, 0, .5);
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover{
+	color: rgba(0, 0, 0, .85);
+}
+
+.clouds, #loading {
+	padding-top:1em;
 }
 
 .cloud{
-	padding-bottom: 2em;
+	padding: .5em;
+	margin-bottom: .5em;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, .07);
+	border: 2px solid rgba(0, 0, 0, .05);
+	font-size: 36px;
 }
 
 div.cloud:hover {
     cursor: hand;
     cursor: pointer;
-    opacity: .3;
+    opacity: .5;
 }
 
 blockquote {
@@ -95,16 +126,28 @@ blockquote {
 
 #links div {
 	text-align: left;
-	font-size: 1.2em;
+	font-size: 1.3em;
+}
+
+#links .btn{
+	font-size: 1.1em;
 }
 
 .read-more {
 	margin-top: 1em;
 }
 
-.clouds, #again, #loading {
-	padding-top:2em;
+#again-btn {
+	font-size:1.5em;
+	padding-bottom:2em;
+	margin-top: 1em;
+	padding-top:.5em;
 }
+
+.sorry{
+	padding: 2em;
+}
+
 
 @-webkit-keyframes blink { 50% { opacity: 0; }}
 @-moz-keyframes blink { 50% { opacity: 0; }}
@@ -119,6 +162,8 @@ blockquote {
 
   -webkit-transition: opacity 400ms linear;
   transition: opacity 250ms fade-out;
+
+  font-style: bold;
 }
 
 
