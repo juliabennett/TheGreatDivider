@@ -1,3 +1,3 @@
-#The Great Divider 
+# The Great Divider 
 
-This repository contains code for  [TheGreatDivider.xyz](http://www.TheGreatDivider.xyz), a web app that I built as a Fellow at Insight Data Science. 
+Code for a web app built as a Fellow at Insight Data Science. Applies NLP and agglomerative clustering to identify topics in reddit data. 
